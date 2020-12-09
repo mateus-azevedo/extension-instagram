@@ -2,5 +2,13 @@
   "name": "Instagram Dark Mode",
   "version": "1.0",
   "description": "Change Background Color of Instagram",
+  "permissions": ["activeTab","declarativeContent", "storage"],
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "index.html"
+  },
   "manifest_version": 2
 }
