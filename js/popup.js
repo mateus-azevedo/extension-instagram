@@ -6,6 +6,7 @@ chrome.storage.sync.get('color', function(data) {
 });
 
 changeColor.onclick = function(element) {
+  // let reactroot = document.getElementById('react-root').querySelector('section').querySelector('.o64aR');
   let color = element.target.value;
   chrome.tabs.query({active: true, currentWindow: true},
     function(tabs) {
