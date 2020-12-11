@@ -1,6 +1,6 @@
 chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.sync.set({color: '#BA7262'}, function() {
-    console.log("The Color is Marrom.");
+    console.log("Color was saved on Chrome.Storage.Sync");
   });
 });
 
