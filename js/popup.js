@@ -1,19 +1,25 @@
 let changeColor = document.getElementById('changeColor');
 
+// SQUARE COLOR PICKER - data.color
 chrome.storage.sync.get('color', function(data) {
   changeColor.style.backgroundColor = data.color;
   changeColor.setAttribute('value', data.color);
 });
 
 changeColor.onclick = function(element) {
-  // let reactroot = document.getElementById('react-root').querySelector('section').querySelector('.o64aR');
   let color = element.target.value;
+
   chrome.tabs.query({active: true, currentWindow: true},
     function(tabs) {
       chrome.tabs.executeScript(
         tabs[0].id,
-        {code: 'document.body.style.backgroundColor = "' + color + '";'}
+        {
+          code: 
+            'document.querySelector("'+'.o64aR'+'").style.backgroundColor = "'+ color +'";'
+            // 'document.querySelector("'+'.nFCOa'+'").style.backgroundColor = "'+ color +'";'
+        }
       );
+
     }
   );
 }
